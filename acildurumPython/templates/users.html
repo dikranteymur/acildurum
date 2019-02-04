@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<head>
+    <title>Users</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <table id="users" style="width:100%">
+        <p>{{ mesaj }}</p>
+        
+        {% if result %}
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>password</th>
+            <th>kayit_tarihi</th>
+        </tr>
+
+        {% for row in result %}
+        <tr>
+            <td> {{ row.id }}</td>
+            <td> {{ row.username }}</td>
+            <td> {{ row.password }}</td>
+            <td> {{ row.kayit_tarihi }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <p>Login</p>
+    {% if mesaj %}
+    <h1>{{ mesaj }}</h1>
+    {% else %}
+    <p>{{ "Hata: Mesaj gönderilemedi" }}
+        {% endif %}
+        <br>
+        {% if username %}
+        <h1>{{ username }} adlı kullanıcı giriş yaptı...</h1>
+        {% else %}
+        <p>{{ "Hata: username bulunamadı" }}
+            {% endif %}
+
+</body>
+
+</html>
