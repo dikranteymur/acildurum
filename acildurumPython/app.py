@@ -16,17 +16,10 @@ def index():
 def login():
     mesaj = ""
     if request.method == "POST":
-        print("**** Başlangıç:", "*"*100)
-        print(request.args)
         data = request.get_json()
-        print("Type of data: ", type(data))
         username = data["username"]
         password = data["password"]
-        print("Username: ", username)
-        print("Password: ", password)
-        print("*"*100)
         mesaj = db.login(username, password)
-
     return jsonify({"mesaj": mesaj})
     # return render_template("login.html", username=username, mesaj="Mesaj: Merhaba", content_type="application/json")
 
@@ -47,7 +40,8 @@ def register():
 @app.route("/users", methods=["GET", "POST"])
 def allUsers():
     result = db.get_all_users()
-    return render_template("users.html", result=result, content_type="application/json")
+    return render_template(
+        "users.html", result=result, content_type="application/json")
 
 
 if __name__ == '__main__':
