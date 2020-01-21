@@ -1,4 +1,3 @@
-# acildurum ornek uygulamasi
+# acildurum 
 
-# İkinci değişiklik: 08.02.2019
-# son degisiklik: 21.01.2020
+ - Uygulamanin amaci bir get-post islemi ile kullanici adi ve parolasini veritabanina(mysql) kaydederek localhost'ta web sitesinde gostermek
